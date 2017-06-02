@@ -19,7 +19,9 @@
         <h1>登録確認</h1>
         名前:<%= udb.getName()%><br>
         生年月日:<%= udb.getYear()+"年"+udb.getMonth()+"月"+udb.getDay()+"日"%><br>
-        種別:<%= udb.getType()%><br>
+        種別:<% if(udb.getType().equals("1")){ %>エンジニア<% } %>
+             <% if(udb.getType().equals("2")){ %>営業<% } %>
+             <% if(udb.getType().equals("3")){ %>その他<% } %><br>
         電話番号:<%= udb.getTell()%><br>
         自己紹介:<%= udb.getComment()%><br>
         上記の内容で登録します。よろしいですか？

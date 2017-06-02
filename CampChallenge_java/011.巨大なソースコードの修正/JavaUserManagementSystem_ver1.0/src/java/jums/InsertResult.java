@@ -51,7 +51,7 @@ public class InsertResult extends HttpServlet {
             int day = 0;
             try{
                 year = Integer.parseInt(udb.getYear());
-                month = Integer.parseInt(udb.getMonth());
+                month = Integer.parseInt(udb.getMonth()) - 1;
                 day = Integer.parseInt(udb.getDay());
             }catch(NumberFormatException e_nf){ // (ないと思うけど)エラーが発生した場合
                 request.setAttribute("error", e_nf.getMessage());
