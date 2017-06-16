@@ -1,0 +1,294 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>たとえばここがタイトルだとしよう</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <!--tooltipとpopover用の記述-->
+        <script>
+            $(function(){
+                $("[data-toggle=tooltip]").tooltip({
+                    placement : 'bottom'
+                });
+            });
+            $(function(){
+                $("[data-toggle=popover").popover()
+            })
+        </script>
+    </head>
+    
+    <!--基本的に要素はまとまりごとにcontainerで囲む。-->
+    <!--ドロップダウンメニューからはcontainerで囲んでいないが、スタイルが崩れているのが分かる-->
+    <body>
+        <h1>これがカラムシステムである</h1>
+            <div id="header" class="container" style="background:red;">header</div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 hidden-xs" style="background:blueviolet">SideHidden</div>
+                    <div class="visible-xs" style="background:gray">Side1</div>
+                    <div class="col-sm-6 col-xs-6" style="background:green">Main</div>
+                    <div class="col-sm-3 col-xs-6" style="background:orange">Side2</div>
+                </div>
+            </div>
+            
+            <div class="container" style="padding: 20px 0">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr><td>id</td><td>score</td></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>佐藤</td><td>100</td></tr>
+                        <tr><td class="warning">山田</td><td>200</td></tr>
+                        <tr><td>高橋</td><td>300</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!--フォーム構造と要素の並べ方-->
+            <div class="container" style="padding: 20px 0">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only control-label">メールアドレス</label>
+                        <input type="text" id="email" class="form-control" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">パスワード</label>
+                        <input type="text" id="password" class="form-control" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+                
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        
+                        <label class="control-label col-sm-2">メールアドレス2</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="email2" class="form-control" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">パスワード2</label>
+                        <div class="col-sm-5">
+                            <input type="text" id="password2" class="form-control" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-4">
+                        <input type="submit" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!--アイコン使用例とボタン-->
+            <div class="container" style="padding:20px 0;">
+                <p><i class="glyphicon glyphicon-picture">画像アイコン例</i></p>
+                <button class="btn btn-success"><i class="glyphicon glyphicon-picture">アイコンボタン例</i></button>
+                <div class="btn-group">
+                    <button class="btn btn-success">ボタン1</button>
+                    <button class="btn btn-success">ボタン2</button>
+                    <button class="btn btn-success">ボタン3</button>
+                </div>
+            </div>
+            
+            <!--ドロップダウンメニュー-->
+            <!--これはbootstrap.min.jsを記述してないと動かないから気を付けようね-->
+            <div class="btn-group">
+                <button class="btn btn-primary">ドロップダウン例</button>
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="">メニュー1</a></li>
+                    <li><a href="">メニュー2</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">メニュー3</a></li>
+                </ul>
+            </div>
+            
+            <!--パンくずリストとページング-->
+            <ul class="breadcrumb">
+                <li><a href="">link1</a></li>
+                <li><a href="">link2</a></li>
+                <li class="active">@AkiraOmi</li>
+            </ul>
+            <ul class="pagination">
+                <li><a href="">&laquo;</a></li>
+                <li class="active"><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">&laquo;</a></li>
+            </ul>
+            <ul class="pager">
+                <li class="previous"><a href="">前へ</a></li>
+                <li class="next"><a href="">次へ</a></li>
+            </ul>
+            
+            <!--ナビゲーションバー。スマホ対応版(collapse記述あり)。containerに含んでみた-->
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand">TestPage</a>
+                    </div>
+                    <div class="collapse navbar-collapse target">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="">link1</a></li>
+                            <li><a href="">link2</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" style="margin-right:20px">
+                            <li><a href="">link3</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+            <!--ラベルやパネルなどの表示系-->
+            <div class="container">
+                <p><span class="label label-primary">お知らせ</span><a href="">新商品が発表されました</a>
+                        <span class="label label-success">NEW!</span></p>
+                <p><a href="">受信メール<span class="badge">5</span></a></p>
+                <div class="alert alert-info">
+                    <button class="close" data-dismiss="alert">&times;</button>
+                    新着情報が 1 件あります
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        おしらせ
+                    </div>
+                    <div class="panel-body">
+                        これがパネルの使用法なのでちゃんと覚えようね！
+                    </div>
+                </div>
+            </div>
+            
+            <!--プログレスバーの表示-->
+            <div class="container">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-primary" style="width:60%;"></div>
+                </div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-info" style="width:60%;"></div>
+                </div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-info" style="width:40%;"></div>
+                    <div class="progress-bar progress-bar-primary" style="width:30%;"></div>
+                    <div class="progress-bar progress-bar-success" style="width:20%;"></div>
+                </div>
+            </div>
+            
+            <!--モーダルウィンドウの表示-->
+            <div class="container" style="padding: 20px 0">
+                <a data-toggle="modal" href="#myModal" class="btn btn-success">モーダル！</a>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">これがモーダルだ</h4>
+                            </div>
+                            <div class="modal-body">
+                                モーダルウィンドウの本文だよ！
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary">OK!!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--タブページの表示-->
+            <div class="container">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                    <li><a href="#about" data-toggle="tab">About</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">ここがホームの記述です<br>改行テスト</div>
+                    <div class="tab-pane active" id="about">ここにサイトについての記述が入ります<br>改行テスト</div>
+                </div>
+            </div>
+            
+            <!--ツールチップとポップオーバー(script記述が必要)-->
+            <div class="container" style="padding: 20px 0">
+                <p><a href="#" data-toggle="tooltip" title="つーーる">tooltip</a> and 
+                    <a href="#" data-toggle="popover" title="ぽっっぷ" data-content="さらなるぽっぷをあなたに">popover</a></p>
+            </div>
+            
+            <!--カルーセル部分-->
+            <div class="container" style="padding: 20px 0">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 900px; height: 300px;">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img src="img/photo1.jpg" alt="photo1" class="img-responsive center-block" style="width: 900px; height: 300px;">
+                        <div class="carousel-caption">
+                          意味もないキャプション
+                        </div>
+                      </div>
+                      <div class="item">
+                        <img src="img/photo2.jpg" alt="photo2" class="img-responsive center-block" style="width: 900px; height: 300px;">
+                        <div class="carousel-caption">
+                          そして意味もない画像群
+                        </div>
+                      </div>
+                      <div class="item">
+                        <img src="img/photo3.jpg" alt="photo3" class="img-responsive center-block" style="width: 900px; height: 300px;">
+                        <div class="carousel-caption">
+                          練習のためのスライド－－－－－－－
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+            </div>
+                
+            
+            
+            <div id="footer" class="container" style="background:blue">footer</div>
+    </body>
+</html>
